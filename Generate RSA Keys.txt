@@ -1,0 +1,11 @@
+python3 - <<'PY'
+from Cryptodome.PublicKey import RSA
+
+key = RSA.generate(4096)
+with open("private.pem", "wb") as f:
+    f.write(key.export_key())
+with open("public.pem", "wb") as f:
+    f.write(key.publickey().export_key())
+
+print("✅ Generated RSA keys: private.pem & public.pem")
+PY

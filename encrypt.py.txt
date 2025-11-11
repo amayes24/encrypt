@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+import os
+import json
+from base64 import b64encode
+from Cryptodome.Cipher import AES, PKCS1_OAEP
+from Cryptodome.PublicKey import RSA
+from Cryptodome.Random import get_random_bytes
+
+def encrypt_file_with_rsa_pub(file_path, rsa_pub):
+    # read file bytes
+    with open(file_path, "rb") as f:
+        plaintext = f.read()
+
+    # generate random AES key per file
+    aes_key = get_random_bytes(32)  # 256-bit AES key
+    cipher_aes = AES.new(aes_key, AES.MODE_CTR)
+    ciphertext = cipher_aes.encrypt(plaintext)
+    nonce = cipher_aes.nonce
+
+    # encrypt AES key with RSA public key (OAEP)
+    rsa_cipher = PKCS1_OAEP.new(rsa_pub)
+    encrypted_key = rsa_cipher.encrypt(aes_key)
+
+    payload = {
+        "encrypted_key": b64encode(encrypted_key).decode("utf-8"),
+        "nonce": b64encode(nonce).decode("utf-8"),
+        "ciphertext": b64encode(ciphertext).decode("utf-8"),
+    }
+
+    out_path = file_path + ".enc"
+    with open(out_path, "w") as f:
+        json.dump(payload, f)
+
+    print(f"Encrypted: {file_path} -> {out_path}")
+
+def main():
+    pub_path = input("Path to RSA public key (e.g. public.pem): ").strip()
+    folder = input("Directory to encrypt: ").strip()
+
+    with open(pub_path, "rb") as f:
+        rsa_pub = RSA.import_key(f.read())
+
+    for root, _, files in os.walk(folder):
+        for name in files:
+            # skip already-encrypted files
+            if name.endswith(".enc"):
+                continue
+            file_path = os.path.join(root, name)
+            encrypt_file_with_rsa_pub(file_path, rsa_pub)
+
+if __name__ == "__main__":
+    main()
