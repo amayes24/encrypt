@@ -7,7 +7,7 @@ https://www.kali.org/get-kali/#kali-virtual-machines
 ```
 # The credentials are:
 # Username: kali
-# Password: kal
+# Password: kali
 
 # How to create a directory then place a copy of this project description file into it
 
