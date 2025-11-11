@@ -1,4 +1,4 @@
-# Encrypt-Decrypt-Monitor Excercise in Linux Environment
+Encrypt-Decrypt-Monitor Excercise in Linux Environment
 
 
 # This Project uses:Kali 2025 virtual machine (VM):
