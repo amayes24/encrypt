@@ -1,13 +1,22 @@
 # Encrypt-Decrypt-Monitor Excercise in Linux Environment
 
-##How to create a directory then place a copy of this project description file into it
+
+# This Project uses:Kali 2025 virtual machine (VM):
+```
+# https://www.kali.org/get-kali/#kali-virtual-machines
+```
+# The credentials are:
+# Username: kali
+# Password: kal
+
+# How to create a directory then place a copy of this project description file into it
 
 ```
 #! /usr/bin/env bash
 EUID="am3427"
 BASE="$HOME/personal_${EUID}"
 ```
-##How to create directory and sub directories secret1, secret2, secret3. Then place lab 1a manual into each of them
+# How to create directory and sub directories secret1, secret2, secret3. Then place lab 1a manual into each of them
 
 ```
 set -e
