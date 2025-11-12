@@ -17,7 +17,7 @@ set -u
 "${BASE:=/home/kali/personal_1000}"
 rm -rf "$BASE"
 ```
-# How to create directory and sub directories secret1, secret2, secret3. Then place lab 1a manual into each of them
+# How to create directory and sub directories secret1, secret2, secret3. Then place lab manual into each of them
 
 ```
 mkdir -p "$BASE/secret1" "$BASE/secret2" "$BASE/secret3"
