@@ -181,4 +181,9 @@ ls -l private.pem
 ls -lab /home/kali/personal_1000
 head -n 40 /home/kali/personal_1000/project_description.txt.enc
 ```
-
+# copy/paste into monitor_detect.py
+```
+nano monitor_detect.py
+```
+# Ctrl o and then ENTER to save
+# Ctrl x to exit
