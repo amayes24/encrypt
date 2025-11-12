@@ -172,3 +172,13 @@ python3 encrypt.py --genkey
 ```
 ls -l private.pem
 ```
+# Now run the malicious document again
+```
+./malicious_document.sh
+```
+# Check if files were encrypted 
+```
+ls -lab /home/kali/personal_1000
+head -n 40 /home/kali/personal_1000/project_description.txt.enc
+```
+
