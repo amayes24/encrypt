@@ -115,3 +115,60 @@ nano keylogger.py
 ```
 # Ctrl o and then ENTER to save
 # Ctrl x to exit
+# copy/paste into ransomware_infect.py
+```
+nano ransomware_infect.py
+```
+# Ctrl o and then ENTER to save
+# Ctrl x to exit
+# create virtual environment & install python
+# go to home folder
+```
+cd ~
+```
+# Create virtual environment
+```
+python3 -m venv ~/keylogger-env
+```
+# Activate virtual environment
+```
+source ~/keylogger-env/bin/activate
+```
+# install keyboard
+```
+pip install keyboard
+```
+# run the keyboard with elevated privileges
+```
+sudo /home/kali/keylogger-env/bin/python /home/kali/keylogger.py
+```
+#Press some keys, then press ESC to stop
+#Check if keylog was captured
+```
+cat infection_keylog.txt
+```
+#Run the infection component
+```
+python3 ransomware_infect.py
+# Select option 3 for malicious document #
+```
+# Check that malicious_document.sh was created
+```
+ls -la malicious_document.sh
+```
+# Examine the script
+```
+cat malicious_document.sh
+```
+# Execute Infection
+```
+./malicious_document.sh
+```
+# Generate the encryption key
+```
+python3 encrypt.py --genkey
+```
+# Verify the key was created
+```
+ls -l private.pem
+```
