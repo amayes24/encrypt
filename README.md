@@ -213,6 +213,12 @@ sudo apt install -y bsd-mailx
 sudo systemctl start postfix
 # read mail with "mail" #
 ```
+# create mailbox file
+```
+sudo touch /var/mail/kali
+sudo chown kali:mail /var/mail/kali
+sudo chmod 660 /var/mail/kali
+```
 # Go to folder containing “monitor_detect.py”
 ```
 cd /home/kali
