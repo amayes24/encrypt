@@ -193,13 +193,13 @@ python3 -m venv ~/venvs/watchdog_env
 ```
 # Activate virtual environment
 ```
-ource ~/venvs/watchdog_env/bin/activate
+source ~/venvs/watchdog_env/bin/activate
 ```
 # install watchdog
 ```
 pip install watchdog
 ```
-# install postfi
+# install postfix
 ```
 sudo apt update
 sudo apt install -y postfix
