@@ -187,3 +187,38 @@ nano monitor_detect.py
 ```
 # Ctrl o and then ENTER to save
 # Ctrl x to exit
+# Create virtual environment
+```
+python3 -m venv ~/venvs/watchdog_env
+```
+# Activate virtual environment
+```
+ource ~/venvs/watchdog_env/bin/activate
+```
+# install watchdog
+```
+pip install watchdog
+```
+# Go to folder containing “monitor_detect.py”
+```
+cd /home/kali
+```
+# start monitor_detect.py
+```
+python monitor_detect.py
+```
+# open a new terminal
+# Run the infection component
+```
+python3 ransomware_infect.py
+# Select option 3 for malicious document #
+```
+# Execute Infection
+```
+./malicious_document.sh
+Ctr + C
+```
+#check the logs
+```
+sqlite3 access_log.db "SELECT timestamp, event_type, file_path, alert FROM access_events ORDER BY id DESC LIMIT 10;"
+```
