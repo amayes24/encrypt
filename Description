@@ -1,0 +1,33 @@
+# Hello, my name is Ananias Mayes, and today I’ll be presenting my final project for CSCE 5550 Intro to Comp Security, which is hosted on my GitHub repository called encrypt. This project is a safe ransomware simulation designed for educational purposes. The goal is to demonstrate how ransomware infections can spread and how detection systems can respond, without ever running destructive code.
+
+
+# The purpose of this project is to simulate ransomware behaviors in a controlled environment. Instead of encrypting real files or logging keystrokes, my scripts generate harmless high‑entropy files and background tasks. This allows us to test monitoring tools, like monitor_detect.py, and verify that alerts and email notifications are triggered correctly. In other words, it’s a teaching tool: it shows the lifecycle of ransomware without causing harm.
+
+
+# On my GitHub, you’ll see the main folder with scripts such as encrypt.py, keylogger.py, and ransomware_infect.py.
+
+# • encrypt.py simulates file encryption by writing random data to files in a target directory.
+# • keylogger.py is a placeholder that simply logs timestamps, not actual keystrokes.
+# • ransomware_infect.py is the centerpiece. It creates different infection vectors: USB simulation, phishing email attachments, malicious documents, and startup persistence.
+
+
+# Each of these vectors is safe, but they mimic how real ransomware might spread.
+
+
+# Let’s walk through the four infection vectors:
+
+# 1. USB Simulation: The script creates a fake USB directory and copies payloads into it. This demonstrates how ransomware can spread through removable drives.
+# 2. Phishing Email Simulation: It generates a fake email attachment, disguised as a PDF but actually a .bat file. When run, it launches the simulator. This shows how ransomware often # arrives via email.
+# 3. Malicious Document Execution: This creates a shell script called malicious_document.sh. When executed, it runs the simulator, generates high‑entropy files, and now also sends an  # email to kali@localhost. This demonstrates how opening a malicious document can trigger infection.
+# 4. Startup Persistence: The script places a startup file in the autostart directory, simulating how ransomware ensures it runs every time the system boots.
+
+
+
+# The real educational value comes when you run these simulations alongside monitor_detect.py. That monitor watches the target directory for suspicious activity. When it sees large,  #random files being written, it logs warnings and sends email alerts. By combining the infection script with the monitor, you can demonstrate the full cycle: infection, detection, and # alerting.
+
+# This is especially useful for showing students or colleagues how ransomware detection works without risking actual data loss.
+
+
+# In summary, my project provides a safe, reproducible way to study ransomware infection vectors and detection. Its hosted on GitHub so others can clone it, run it in a VM, and learn #from it. The key takeaway is that we can understand ransomware behaviors and practice defensive strategies without ever running real malware.
+
+# I hope this demonstration helps you see how simulation can be a powerful educational tool in cybersecurity.
