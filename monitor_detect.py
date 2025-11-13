@@ -26,7 +26,7 @@ from watchdog.events import FileSystemEventHandler
 # === Configuration ===
 WATCH_PATH = "/home/kali/personal_1000"
 
-ADMIN_EMAIL = "admin@localhost"
+ADMIN_EMAIL = "kali@localhost"
 USE_LOCAL_SMTP = True
 SMTP_SERVER = "localhost"
 SMTP_PORT = 1025
