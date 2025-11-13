@@ -162,7 +162,7 @@ cat malicious_document.sh
 ```
 # Execute Infection
 ```
-./malicious_document.sh
+python3 ransomware_infect.py
 ```
 # Generate the encryption key
 ```
@@ -199,6 +199,20 @@ ource ~/venvs/watchdog_env/bin/activate
 ```
 pip install watchdog
 ```
+# install postfi
+```
+sudo apt update
+sudo apt install -y postfix
+# on the configuration screen select "Local only" #
+# type "localhost" for the system mailn= name #
+# this sets you up to deliver mail locally #
+```
+# install mail reader
+```
+sudo apt install -y bsd-mailx
+sudo systemctl start postfix
+# read mail with "mail" #
+```
 # Go to folder containing “monitor_detect.py”
 ```
 cd /home/kali
@@ -221,4 +235,13 @@ Ctr + C
 #check the logs
 ```
 sqlite3 access_log.db "SELECT timestamp, event_type, file_path, alert FROM access_events ORDER BY id DESC LIMIT 10;"
+```
+# check the mail sent
+```
+mail
+```
+# Ctrl z to exit #
+# read mail
+```
+cat /var/mail/kali
 ```
