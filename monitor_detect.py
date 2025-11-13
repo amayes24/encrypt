@@ -28,8 +28,8 @@ WATCH_PATH = "/home/kali/personal_1000"
 
 ADMIN_EMAIL = "admin@localhost"
 USE_LOCAL_SMTP = True
-SMTP_SERVER = "smtp.example.com"
-SMTP_PORT = 587
+SMTP_SERVER = "localhost"
+SMTP_PORT = 1025
 SMTP_USER = ""
 SMTP_PASS = ""
 
